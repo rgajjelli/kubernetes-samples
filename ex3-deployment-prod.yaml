@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: nginx-deployment-prod
+  name: nginx-prod
 spec:
   replicas: 1
   template:
