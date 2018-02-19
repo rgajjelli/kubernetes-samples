@@ -57,3 +57,17 @@ kubectl rollout history deployment/nginx-deployment-dev --revision=3
 kubectl describe deployment nginx-deployment-dev
 kubectl rollout undo deployment/nginx-deployment-dev --to-revision=2 (Rollback from version =3 to version =2)
 kubectl rollout history deployment/nginx-deployment-dev
+
+SERVICE:
+------------
+kubectl create -f python/py-deployments.yaml
+kubectl create -f python/python-service-nodeport.yaml
+
+==> check http://minion1:32001/info  or http://minion2:32001/info
+
+
+DEPLOYMENT:
+----------
+kubectl create -f kube-pv/kube-nfs-pv.yaml
+kubectl create -f kube-pv/kube-nfs-pvc.yaml
+kubectl create -f kube-pv/kube-nfs-app.yaml
