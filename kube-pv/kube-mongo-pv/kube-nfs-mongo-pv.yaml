@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-mong-pv
+spec:
+  capacity:
+    storage: 2Mi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: slow
+  nfs:
+    # FIXME: use the right IP
+    path: /var/nfs/mongo
+    server: 192.168.146.199

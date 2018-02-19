@@ -1,4 +1,3 @@
-
 COMMAND-LINE
 ------------
  - This creates a deployment intern creates a ReplicaSet which has a unit of work i.e POD
@@ -37,7 +36,6 @@ $ kubectl set image deployment <deployment> <container>=<image> --record
 $ kubectl set image deployment nginx nginx=nginx:1.9 --record
 
 kubectl replace -f ex5-deployment-dev-update-1.9.yaml --record
-
 kubect rollout history deployment/nginx-deployment-dev
 kubectl rollout history deployment/nginx-deployment-dev
 
@@ -57,7 +55,5 @@ kubectl rollout history deployment/nginx-deployment-dev --revision=2
 kubectl rollout history deployment/nginx-deployment-dev --revision=3
 
 kubectl describe deployment nginx-deployment-dev
-
-kubectl rollout undo deployment/nginx-deployment-dev --to-revision=2
-
+kubectl rollout undo deployment/nginx-deployment-dev --to-revision=2 (Rollback from version =3 to version =2)
 kubectl rollout history deployment/nginx-deployment-dev
