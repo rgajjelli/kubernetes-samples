@@ -5,7 +5,7 @@ kind: ReplicationController
 metadata:
   name: nfs-web
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     role: web-frontend
   template:

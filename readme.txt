@@ -71,3 +71,14 @@ DEPLOYMENT:
 kubectl create -f kube-pv/kube-nfs-pv.yaml
 kubectl create -f kube-pv/kube-nfs-pvc.yaml
 kubectl create -f kube-pv/kube-nfs-app.yaml
+
+volumeClaimTemplates:
+ - metadata:
+     name: mongo-persistent-storage
+     annotations:
+       volume.beta.kubernetes.io/storage-class: "fast"
+   spec:
+     accessModes: [ "ReadWriteOnce" ]
+     resources:
+       requests:
+         storage: 100Gi
