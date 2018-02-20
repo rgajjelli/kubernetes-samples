@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ready-pod
+spec:
+  containers:
+  - name: sise
+    image: gajjelli/simpleservice
+    ports:
+    - containerPort: 9876
+    readinessProbe:
+      initialDelaySeconds: 10
+      httpGet:
+        path: /health
+        port: 9876

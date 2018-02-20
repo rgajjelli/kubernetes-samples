@@ -5,12 +5,12 @@ metadata:
 spec:
   replicas: 2
   selector:
-    app: sise
+    app: sise-match
   template:
     metadata:
-      name: sise
+      name: sise-rc
       labels:
-        app: sise
+        app: sise-match
     spec:
       containers:
       - name: sise

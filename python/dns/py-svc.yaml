@@ -7,4 +7,4 @@ spec:
     - port: 80
       targetPort: 9876
   selector:
-    app: sise
+    app: sise-match
