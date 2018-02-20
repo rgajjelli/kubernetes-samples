@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: rcsise
+  namespace: ukns
+spec:
+  replicas: 2
+  selector:
+    app: sise
+  template:
+    metadata:
+      name: somename
+      labels:
+        app: sise
+    spec:
+      containers:
+      - name: sise
+        image: gajjelli/simpleservice
+        ports:
+        - containerPort: 9876
