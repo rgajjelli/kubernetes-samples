@@ -6,11 +6,12 @@ metadata:
   labels:
     name: mongo
 spec:
-   ports:
-   - port: 27017
-     targetPort: 27017
-   selector:
-     name: mongo
+  ports:
+  - port: 27017
+    targetPort: 27017
+  clusterIP: None
+  selector:
+    name: mongo
 ---
 apiVersion: apps/v1beta1
 kind: StatefulSet
